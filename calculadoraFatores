@@ -1,0 +1,120 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int numero; //Numero de elementos declarados pelo usuario
+    int fatorial; //Fatorial de um numero (n!)
+    int escolha; //Escolha das calculadoras
+    int agrupamento; //Numero do agrupamento declarados pelo usuario
+    int numero_Menos_Agrupamento; // (numero-agrupamento)
+    int fatorial_Numero_Menos_Agrupamento; // (numero-agrupamento)!
+    int fatorial_Agrupamento; // agrupamento(p)!
+// Nas variaveis declaramos mais de uma vez o "fatorial" pois nas formulas a varios fatoriais distintos
+
+    cout << "Escolha entre as calculadoras: \n 1. (Fatorial)  \n 2. (Arranjo Simples) \n 3. (Combinacao Simples)" << endl;
+cin >> escolha;
+
+
+
+switch (escolha)
+{
+    
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Calculadora para o fatorial de um numero
+
+case 1:
+       cout<<"Fatoriais\n"<<endl;
+    cout<<"Digite um numero para descobrir seu fatorial:"<<endl;
+    cin>>numero; 
+
+    for (fatorial = 1; numero > 1; numero--){ //Formula para o fatorial de um numero
+    fatorial = fatorial * numero;
+}
+
+    if (numero < 0 && numero int){
+        cout<<"Nao existe fatorial negativo "<<endl;
+
+    }
+
+    else{
+        if (numero == 1 && numero == 0) 
+        {
+            cout<<"Fatorial: 1"<<endl;
+        }
+        else{
+             cout<<"O fatorial de seu numero eh: "<< fatorial <<endl;
+            }
+           
+        }
+    break;
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Calculadora para o Arranjo Simples de um numero
+
+    case 2:
+    cout<<"Arranjo Simples\n"<<endl;
+    cout<<"Digite o valor dos elementos"<<endl;
+    cin >> numero;
+    cout<<"Digite o valor do agrupamento"<<endl;
+    cin >> agrupamento;
+
+    numero_Menos_Agrupamento = numero-agrupamento; //Formula para declarar numero - agrupamento
+
+    for (fatorial = 1; numero > 1; numero--){
+    fatorial = fatorial * numero; //Formula para o fatorial de um numero
+}
+    for (fatorial_Numero_Menos_Agrupamento = 1; numero_Menos_Agrupamento > 1; numero_Menos_Agrupamento--){
+    fatorial_Numero_Menos_Agrupamento = fatorial_Numero_Menos_Agrupamento * numero_Menos_Agrupamento; //Formula para calcular o fatorial de outro numero
+}
+    fatorial = fatorial/ fatorial_Numero_Menos_Agrupamento; //Resultado com a formula toda certinha e com todos os numeros com seu respectivo fatorial (n!/(n-p)!)
+
+    cout<<"O valor descoberto foi "<<fatorial<<"."<<endl;
+
+break;
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+case 3:
+cout << "Combinacao Simples\n" << endl;
+    cout<<"Digite o valor dos elementos"<<endl;
+    cin >> numero;
+    cout<<"Digite o valor do agrupamento"<<endl;
+    cin >> agrupamento;
+
+    numero_Menos_Agrupamento = numero-agrupamento; //Formula para declarar o valor numero-agrupamento
+    
+    for (fatorial = 1; numero > 1; numero--){
+    fatorial = fatorial * numero; //Formula para calcular o fatorial de um numero
+    }
+    
+    for (fatorial_Agrupamento = 1; agrupamento > 1; agrupamento--){
+        fatorial_Agrupamento = fatorial_Agrupamento * agrupamento; //Formula para calcular o fatorial de outro numero
+    }
+    
+    for (fatorial_Numero_Menos_Agrupamento = 1; numero_Menos_Agrupamento > 1; numero_Menos_Agrupamento--){
+    fatorial_Numero_Menos_Agrupamento = fatorial_Numero_Menos_Agrupamento * numero_Menos_Agrupamento; 
+}
+
+  fatorial = fatorial/ (fatorial_Agrupamento * (fatorial_Numero_Menos_Agrupamento)); //Formula: n!/(p!*(n-p)!)
+    
+
+
+    cout<<"O valor descoberto foi "<<fatorial<<"."<<endl;
+
+
+break;
+
+default: cout << "Nao possuimos esta calculadora." << endl;
+    break;
+
+
+
+ 
+        return 0;
+    }
+
+}
+
