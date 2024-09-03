@@ -33,7 +33,7 @@ case 1:
     fatorial = fatorial * numero;
 }
 
-    if (numero < 0 && numero int){
+    if (numero < 0 ){
         cout<<"Nao existe fatorial negativo "<<endl;
 
     }
